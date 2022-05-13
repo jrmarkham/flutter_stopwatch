@@ -14,6 +14,7 @@ class StopWatchScreen extends StatelessWidget {
     final StopwatchCubit _stopwatchCubit = StopwatchCubit();
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
         title: const Text(':::: STOPWATCH ::::'),
       ),
       body: BlocBuilder<StopwatchCubit, StopWatchStateModel>(
