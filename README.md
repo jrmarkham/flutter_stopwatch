@@ -1,16 +1,3 @@
 # stopwatch
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+For sturture: I used my favorite design pattern of domain driven design. The cubit and model and pretty complete. I'd consider moving ome code from the cubit into a mixin, but the class length is fewer than 50 lines so probaly unnessary. The display is broken into widgets. I'd probably create individual buttons on a production app and move some of the functions into mixins or utils.
