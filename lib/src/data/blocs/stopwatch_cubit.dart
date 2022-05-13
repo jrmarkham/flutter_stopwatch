@@ -29,7 +29,6 @@ class StopwatchCubit extends Cubit<StopWatchStateModel> {
         if (state.stopWatchState == StopWatchState.running) {
           debugPrint('error conflict');
         }
-        //  _stopwatch.start();
 
         _timer = Timer.periodic(_timerDuration, (Timer _t) {
           _milliseconds++;
