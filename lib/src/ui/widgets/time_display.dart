@@ -18,34 +18,34 @@ class TimeDisplay extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    late int _hours;
-    late int _minutes;
-    late int _secs;
-    late int _milli;
+    late int hours;
+    late int minutes;
+    late int secs;
+    late int milli;
 
     if (milliseconds > 999) {
-      _secs = milliseconds ~/ 1000;
-      _milli = milliseconds % 1000;
+      secs = milliseconds ~/ 1000;
+      milli = milliseconds % 1000;
     } else {
-      _hours = 0;
-      _minutes = 0;
-      _secs = 0;
-      _milli = milliseconds;
+      hours = 0;
+      minutes = 0;
+      secs = 0;
+      milli = milliseconds;
     }
 
-    if (_secs > 59) {
-      _minutes = _secs ~/ 60;
-      _secs = _secs % 60;
+    if (secs > 59) {
+      minutes = secs ~/ 60;
+      secs = secs % 60;
     } else {
-      _hours = 0;
-      _minutes = 0;
+      hours = 0;
+      minutes = 0;
     }
 
-    if (_minutes > 59) {
-      _hours = _minutes ~/ 60;
-      _minutes = _minutes % 60;
+    if (minutes > 59) {
+      hours = minutes ~/ 60;
+      minutes = minutes % 60;
     } else {
-      _hours = 0;
+      hours = 0;
     }
 
     return Center(
@@ -55,28 +55,28 @@ class TimeDisplay extends StatelessWidget {
         children: [
           Column(
             children: [
-              Text('$_hours'),
+              Text('$hours'),
               const Text('HOURS'),
             ],
           ),
           const Text(' : '),
           Column(
             children: [
-              Text(getSecMinDisplay(_minutes)),
+              Text(getSecMinDisplay(minutes)),
               const Text('MINS'),
             ],
           ),
           const Text(' : '),
           Column(
             children: [
-              Text(getSecMinDisplay(_secs)),
+              Text(getSecMinDisplay(secs)),
               const Text('SECS'),
             ],
           ),
           const Text(' . '),
           Column(
             children: [
-              Text(getMilliDisplay(_milli)),
+              Text(getMilliDisplay(milli)),
               const Text('MILLI'),
             ],
           )

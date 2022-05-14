@@ -1,7 +1,8 @@
 import 'dart:async';
 
-import 'package:bloc/bloc.dart';
+
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_bloc/flutter_bloc.dart' show Cubit;
 import 'package:stopwatch/src/data/models/stopwatch_state_model.dart';
 import 'package:stopwatch/src/globals/enums.dart';
 
@@ -30,7 +31,7 @@ class StopwatchCubit extends Cubit<StopWatchStateModel> {
           debugPrint('error conflict');
         }
 
-        _timer = Timer.periodic(_timerDuration, (Timer _t) {
+        _timer = Timer.periodic(_timerDuration, (Timer timer) {
           _milliseconds++;
           emit(state.copyWith(updateStopWatchState: StopWatchState.running, updateMilliseconds: _milliseconds));
         });

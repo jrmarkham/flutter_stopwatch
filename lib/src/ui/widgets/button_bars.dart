@@ -16,7 +16,6 @@ class GetButtonBar extends StatelessWidget {
       case StopWatchState.paused:
         return PausedButtons(runAction);
     }
-    return Container();
   }
 }
 

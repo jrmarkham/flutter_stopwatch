@@ -11,14 +11,14 @@ class StopWatchScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final StopwatchCubit _stopwatchCubit = StopwatchCubit();
+    final StopwatchCubit stopwatchCubit = StopwatchCubit();
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
         title: const Text(':::: STOPWATCH ::::'),
       ),
       body: BlocBuilder<StopwatchCubit, StopWatchStateModel>(
-        bloc: _stopwatchCubit,
+        bloc: stopwatchCubit,
         builder: (BuildContext context, StopWatchStateModel modelState) {
           return Column(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -27,7 +27,7 @@ class StopWatchScreen extends StatelessWidget {
               TimeDisplay(modelState.milliseconds),
               GetButtonBar(
                 state: modelState.stopWatchState,
-                runAction: (StopWatchActions action) => _stopwatchCubit.onAction(action),
+                runAction: (StopWatchActions action) => stopwatchCubit.onAction(action),
               )
             ],
           );
